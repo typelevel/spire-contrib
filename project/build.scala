@@ -51,11 +51,6 @@ object SpireContribBuild extends Build {
 
     resolvers += Resolver.sonatypeRepo("releases"),
 
-    // https://github.com/sbt/sbt/issues/603
-    conflictWarning ~= { cw =>
-      cw.copy(filter = (id: ModuleID) => true, group = (id: ModuleID) => id.organization + ":" + id.name, level = Level.Error, failOnConflict = true)
-    },
-
     sourceDirectory <<= baseDirectory(identity),
 
     publishTo <<= (version).apply { v =>
