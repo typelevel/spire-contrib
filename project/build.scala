@@ -111,7 +111,7 @@ object SpireContribBuild extends Build {
     settings = standardSettings ++ Seq(
       publishArtifact := false
     ),
-    aggregate = Seq(apfloat)
+    aggregate = Seq(apfloat, jscience)
   )
 
   lazy val apfloat = Project(
@@ -123,6 +123,14 @@ object SpireContribBuild extends Build {
     )
   )
 
+  lazy val jscience = Project(
+    id = "jscience",
+    base = file("jscience"),
+    settings = standardSettings ++ Seq(
+      name := "spire-jscience",
+      libraryDependencies += "org.jscience" % "jscience" % "4.3.1"
+    )
+  )
 }
 
 // vim: expandtab:ts=2:sw=2
