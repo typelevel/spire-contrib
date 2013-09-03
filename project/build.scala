@@ -11,8 +11,7 @@ import com.typesafe.sbt.pgp.PgpKeys._
 
 object SpireContribBuild extends Build {
 
-  val spireVersion = "0.4.0-M4"
-
+  val spireVersion = "0.6.0"
 
   lazy val publishSignedArtifacts = ReleaseStep(
     action = st => {
@@ -36,7 +35,7 @@ object SpireContribBuild extends Build {
     licenses := Seq("MIT" → url("http://www.opensource.org/licenses/mit-license.php")),
     homepage := Some(url("http://typelevel.org/")),
 
-    scalaVersion := "2.10.1",
+    scalaVersion := "2.10.2",
     scalacOptions ++= Seq(
       "-unchecked", "-deprecation",
       "-feature", "-language:implicitConversions", "-language:higherKinds"

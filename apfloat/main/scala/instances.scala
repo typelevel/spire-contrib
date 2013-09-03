@@ -5,7 +5,7 @@ import org.apfloat._
 import spire.macros.Auto
 import spire.algebra._
 import spire.math._
-import spire.ops._
+import spire.implicits._
 
 trait Instances {
 
@@ -57,13 +57,16 @@ trait ApfloatNRoot extends NRoot[Apfloat] {
 
 trait ApfloatTrig extends Trig[Apfloat] {
   private final val d180 = new Apfloat(180D)
+  private final val one = new Apfloat(1, constantPrecision)
   def constantPrecision: Int
 
-  lazy val e: Apfloat = exp(new Apfloat(1, constantPrecision))
+  lazy val e: Apfloat = exp(one)
   lazy val pi: Apfloat = ApfloatMath.pi(constantPrecision)
 
   def exp(a: Apfloat): Apfloat = ApfloatMath.exp(a)
+  def expm1(a: org.apfloat.Apfloat): org.apfloat.Apfloat = exp(a) - one
   def log(a: Apfloat): Apfloat = ApfloatMath.log(a)
+  def log1p(a: org.apfloat.Apfloat): org.apfloat.Apfloat = log(a + one)
 
   def sin(a: Apfloat): Apfloat = ApfloatMath.sin(a)
   def cos(a: Apfloat): Apfloat = ApfloatMath.cos(a)

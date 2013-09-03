@@ -4,7 +4,7 @@ import org.jscience.mathematics.number._
 
 import spire.macros.Auto
 import spire.algebra._
-import spire.ops._
+import spire.implicits._
 
 trait Instances {
   implicit val jsciComplexOrder = Auto.java.order[Complex]
