@@ -1,6 +1,6 @@
 package spire.contrib.apfloat
 
-import spire.algebra.{RingLaws, LawChecker}
+import spire.laws.{RingLaws, LawChecker}
 
 import org.scalacheck.{Gen, Arbitrary}
 import org.scalacheck.Arbitrary._

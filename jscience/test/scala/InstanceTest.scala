@@ -2,7 +2,7 @@ package spire.contrib.jscience
 
 import org.jscience.mathematics.number._
 
-import spire.algebra.{ RingLaws, LawChecker }
+import spire.laws.{ RingLaws, LawChecker }
 
 import org.scalacheck.{ Gen, Arbitrary }
 import org.scalacheck.Arbitrary._
