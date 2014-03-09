@@ -1,13 +1,17 @@
 package spire.contrib.apfloat
 
-import spire.laws.{RingLaws, LawChecker}
+import spire.laws._
 
 import org.scalacheck.{Gen, Arbitrary}
 import org.scalacheck.Arbitrary._
 
 import org.apfloat._
 
-class InstanceTests extends LawChecker {
+import org.scalatest.FunSuite
+
+import org.typelevel.discipline.scalatest.Discipline
+
+class InstanceTests extends FunSuite with Discipline {
 
   implicit def ApintArbitrary = Arbitrary(Gen.oneOf(
     arbitrary[Int] map (new Apint(_)),

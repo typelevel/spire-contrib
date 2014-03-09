@@ -2,12 +2,16 @@ package spire.contrib.jscience
 
 import org.jscience.mathematics.number._
 
-import spire.laws.{ RingLaws, LawChecker }
+import spire.laws._
 
 import org.scalacheck.{ Gen, Arbitrary }
 import org.scalacheck.Arbitrary._
 
-class InstanceTests extends LawChecker {
+import org.scalatest.FunSuite
+
+import org.typelevel.discipline.scalatest.Discipline
+
+class InstanceTests extends FunSuite with Discipline {
 
   implicit def ComplexArbitrary = Arbitrary(
     arbitrary[(Double, Double)] map { case (r, i) => Complex.valueOf(r, i) }
